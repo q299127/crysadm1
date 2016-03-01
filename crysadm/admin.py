@@ -105,8 +105,8 @@ def admin_user_management(username):
 def admin_change_password(username):
     n_password = request.values.get('new_password')
 
-    if len(n_password) < 8:
-        session['error_message'] = '密码必须8位以上.'
+    if len(n_password) < 6:
+        session['error_message'] = '密码必须6位以上.'
         return redirect(url_for(endpoint='admin_user_management', username=username))
 
     user_key = '%s:%s' % ('user', username)
