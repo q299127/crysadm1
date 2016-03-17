@@ -387,9 +387,9 @@ if __name__ == '__main__':
     # 收集水晶时间，单位为秒，默认为30秒。
     # 每6小时检测一次水晶收集
     threading.Thread(target=timer, args=(background_collect_crystal, 21600)).start()
-    # 刷新浏览器在线用户数据，单位为秒，默认为5秒。
-    # 每5秒刷新一次在线用户数据
-    threading.Thread(target=timer, args=(background_refresh_online_user_data, 5)).start()
+    # 刷新浏览器在线用户数据，单位为秒，默认为15秒。
+    # 每15秒刷新一次在线用户数据
+    threading.Thread(target=timer, args=(background_refresh_online_user_data, 15)).start()
     # 刷新离线用户数据，单位为秒，默认为30秒。
     # 每分钟刷新离线用户数据（函数内已限制该进程必须在分钟大于50以后才会运行）
     threading.Thread(target=timer, args=(background_refresh_offline_user_data, 60)).start()
